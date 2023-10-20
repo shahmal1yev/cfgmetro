@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SocialMediaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['set.language'])->prefix('/v1')->group(function() {
 
     Route::apiResource('/contacts', ContactController::class)->only('store');
+    Route::apiResource('/social', SocialMediaController::class)->only('index');
 
 });
