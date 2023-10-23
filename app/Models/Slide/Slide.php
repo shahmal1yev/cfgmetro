@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Project;
+namespace App\Models\Slide;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,25 +8,19 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
-class Project extends Model implements TranslatableContract
+class Slide extends Model implements TranslatableContract
 {
     use HasFactory;
     use Translatable;
 
-    private $disk = 'projects';
+    private $disk = 'slides';
 
     protected $fillable = [
         'image',
-        'status',
-    ];
-
-    protected $casts = [
-        'status' => 'boolean'
     ];
 
     public $translatedAttributes = [
-        'title',
-        'content',
+        'title'
     ];
 
     public function getDiskName()

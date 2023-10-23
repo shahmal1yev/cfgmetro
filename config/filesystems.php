@@ -36,10 +36,58 @@ return [
             'throw' => false,
         ],
 
-        'uploads' => [
+        'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/uploads'),
-            'url' => env('APP_URL') . '/uploads',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'banners' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/banners'),
+            'url' => env('APP_URL') . '/storage/banners',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'slides' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/slides'),
+            'url' => env('APP_URL') . '/storage/slides',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'gallery' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/gallery'),
+            'url' => env('APP_URL') . '/storage/gallery',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'about' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/about'),
+            'url' => env('APP_URL') . '/storage/about',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'news' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/news'),
+            'url' => env('APP_URL') . '/storage/news',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'quality' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/quality_icons'),
+            'url' => env('APP_URL') . '/storage/quality_icons',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -70,7 +118,7 @@ return [
     */
 
     'links' => [
-        public_path('uploads') => storage_path('app/uploads'),
+        public_path('storage') => storage_path('app/storage'),
     ],
 
 ];

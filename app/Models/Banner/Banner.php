@@ -1,32 +1,35 @@
 <?php
 
-namespace App\Models\Project;
+namespace App\Models\Banner;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Illuminate\Support\Facades\Storage;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-class Project extends Model implements TranslatableContract
+class Banner extends Model implements TranslatableContract
 {
     use HasFactory;
     use Translatable;
 
-    private $disk = 'projects';
+    private $disk = 'banners';
 
     protected $fillable = [
         'image',
+        'link',
         'status',
+
     ];
 
     protected $casts = [
-        'status' => 'boolean'
+        'status'
     ];
 
     public $translatedAttributes = [
         'title',
-        'content',
+        'description'
     ];
 
     public function getDiskName()
