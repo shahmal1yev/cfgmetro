@@ -31,7 +31,7 @@ class GalleryPolicy
      */
     public function update(User $user, Gallery $gallery): bool
     {
-        return $user->can('update a gallery item')
+        return $user->can('update a gallery item');
     }
 
     /**
